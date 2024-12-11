@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz-Website</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 20px; }
+        .question { margin: 20px 0; }
+        input[type="text"] { padding: 10px; margin-top: 10px; width: 300px; }
+        button { padding: 10px 20px; margin-top: 10px; cursor: pointer; }
+        #result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Willkommen zum Quiz!</h1>
+    <p>Beantworte die folgenden Fragen, um die Werkzeuge freizuschalten!</p>
+    
+    <!-- Frage 1: Medizin -->
+    <div class="question" id="question1">
+        <p>1. Welcher Wissenschaftler entdeckte 1928 das Penicillin und leitete damit die Ära der Antibiotika ein?</p>
+        <input type="text" id="answer1" placeholder="Antwort hier eingeben">
+        <button onclick="checkAnswer1()">Überprüfen</button>
+        <p id="result1"></p>
+    </div>
+    
+    <!-- Frage 2: Star Trek -->
+    <div class="question" id="question2" style="display: none;">
+        <p>2. In welcher Sternzeit startete die USS Enterprise ihre erste 5-Jahres-Mission in der Originalserie?</p>
+        <input type="text" id="answer2" placeholder="Antwort hier eingeben">
+        <button onclick="checkAnswer2()">Überprüfen</button>
+        <p id="result2"></p>
+    </div>
+    
+    <!-- Frage 3: Universum -->
+    <div class="question" id="question3" style="display: none;">
+        <p>3. Was ist der größte bekannte Mond in unserem Sonnensystem?</p>
+        <input type="text" id="answer3" placeholder="Antwort hier eingeben">
+        <button onclick="checkAnswer3()">Überprüfen</button>
+        <p id="result3"></p>
+    </div>
+
+    <script>
+        function checkAnswer1() {
+            const answer1 = document.getElementById('answer1').value.toLowerCase();
+            if (answer1 === 'alexander fleming' || answer1 === 'fleming') {
+                document.getElementById('result1').innerText = "Richtig! Du hast das erste Werkzeug freigeschaltet.";
+                document.getElementById('question2').style.display = 'block';
+            } else {
+                document.getElementById('result1').innerText = "Falsch, versuche es erneut.";
+            }
+        }
+
+        function checkAnswer2() {
+            const answer2 = document.getElementById('answer2').value.toLowerCase();
+            if (answer2 === '1513.1') {
+                document.getElementById('result2').innerText = "Richtig! Du hast das zweite Werkzeug freigeschaltet.";
+                document.getElementById('question3').style.display = 'block';
+            } else {
+                document.getElementById('result2').innerText = "Falsch, versuche es erneut.";
+            }
+        }
+
+        function checkAnswer3() {
+            const answer3 = document.getElementById('answer3').value.toLowerCase();
+            if (answer3 === 'ganymed') {
+                document.getElementById('result3').innerText = "Richtig! Alle Werkzeuge sind freigeschaltet!";
+            } else {
+                document.getElementById('result3').innerText = "Falsch, versuche es erneut.";
+            }
+        }
+    </script>
+</body>
+</html>
